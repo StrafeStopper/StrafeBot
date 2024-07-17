@@ -4,7 +4,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, Events, GatewayIntentBits, EmbedBuilder } = require('discord.js');
 const { token } = require('./config.json');
-const pollschema = require('./votes.js');
+
 
 // Create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds, 'GuildMessagePolls'] });
@@ -43,7 +43,7 @@ for (const folder of commandFolders) {
 
 //poll logic
 
-
+const pollschema = require('./votes.js');
 
 client.on(Events.InteractionCreate, async interaction => {
 	if (!interaction.isChatInputCommand()) return;

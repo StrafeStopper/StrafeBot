@@ -1,5 +1,5 @@
 const { SlashCommandBuilder, EmbedBuilder, ActionRowBuilder, ButtonStyle, ButtonBuilder } = require('discord.js');
-const pollschema = require('../Schemas.js/votes.js');
+const pollschema = require('../../votes.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
