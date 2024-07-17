@@ -1,2 +1,2 @@
 # StrafeBot
-Discord bot
+Discord bot by Strafe
