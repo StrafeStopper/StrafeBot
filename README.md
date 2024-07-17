@@ -1,0 +1,2 @@
+# StrafeBot
+Discord bot
