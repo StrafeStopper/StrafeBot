@@ -1,6 +1,7 @@
 const { SlashCommandBuilder } = require('discord.js');
 
 module.exports = {
+	category: 'misc',
 	data: new SlashCommandBuilder()
 		.setName('insult')
 		.setDescription('Insults the user')

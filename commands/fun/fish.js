@@ -1,6 +1,7 @@
 const { SlashCommandBuilder } = require('discord.js');
 
 module.exports = {
+    category: 'fun',
 	data: new SlashCommandBuilder()
 		.setName('fish')
 		.setDescription('Try to catch a fish!'),
