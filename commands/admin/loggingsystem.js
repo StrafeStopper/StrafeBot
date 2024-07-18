@@ -4,6 +4,7 @@ const mConfig = require("../../messageConfig.json");
 const aConfig = require("../../auditConfig.json");
 
 module.exports = {
+    category: 'admin',
     data: new SlashCommandBuilder()
         .setName('loggingsystem')
         .setDescription('Audit logging system.')
@@ -13,14 +14,14 @@ module.exports = {
         )
         .addSubcommand((s) => s
             .setName('remove')
-            .setDescription('Shuts off the audit logging system.')
+            .setDescription('Removes the audit logging system.')
         )
         .toJSON()
     ,
     userPermissions: [PermissionFlagsBits.ViewAuditLog],
     botPermissions: [PermissionFlagsBits.ViewAuditLog],
 
-    run: async (client, interaction) => {
+    async execute(client, interaction) {
         const { options, guildID, channel, guild } = interaction;
         const subcmd = options.getSubcommand();
         if (!["configure", "remove"].includes(subcmd)) return;
