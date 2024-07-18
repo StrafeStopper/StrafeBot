@@ -1,6 +1,8 @@
 const { SlashCommandBuilder, PermissionsBitField } = require('discord.js');
+const { cooldown } = require('../misc/fuck');
 
 module.exports = {
+	cooldown: 5,
 	category: 'admin',
 	data: new SlashCommandBuilder()
 		.setName('reload')
