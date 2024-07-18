@@ -1,4 +1,4 @@
-const { Guild } = require('discord.js');
+/*const { Guild } = require('discord.js');
 const {model, Schema} = require('mongoose');
 
 let vote = new Schema({
@@ -12,3 +12,4 @@ let vote = new Schema({
 });
 
 module.exports = model("vote", vote);
+*/
