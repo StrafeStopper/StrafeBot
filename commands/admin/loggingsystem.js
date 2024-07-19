@@ -16,7 +16,7 @@ module.exports = {
             .setName('remove')
             .setDescription('Removes the audit logging system.')
         )
-        .toJSON()
+        //.toJSON()
     ,
     userPermissions: [PermissionFlagsBits.ViewAuditLog],
     botPermissions: [PermissionFlagsBits.ViewAuditLog],
