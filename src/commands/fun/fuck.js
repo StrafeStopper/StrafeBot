@@ -20,7 +20,7 @@ module.exports = {
 		{
 			await interaction.reply(`undefined` + ` fucked ${interaction.options.getMember('user')}`);
 		} else
-		await interaction.reply(`${interaction.member.user}` + ` fucked ${interaction.options.getMember('user')}` + text);
+		await interaction.reply(`${interaction.member.user}` + ` fucked ${interaction.options.getMember('user')}` /*+ text*/);
 		
 	},
 };
