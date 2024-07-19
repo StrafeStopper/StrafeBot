@@ -1,10 +1,10 @@
+
 const { SlashCommandBuilder, PermissionFlagsBits, ChannelType, EmbedBuilder, ActionRowBuilder, StringSelectMenuBuilder, ButtonBuilder, ButtonStyle, ComponentType, ChannelSelectMenuBuilder, StringSelectMenuOptionBuilder, Integration, Component, Guild } = require('discord.js');
-const loggingSchema = require("../../auditLogging");
+const loggingSchema = require("../../schemas/auditLogging");
 const mConfig = require("../../messageConfig.json");
 const aConfig = require("../../auditConfig.json");
 
 module.exports = {
-    category: 'admin',
     data: new SlashCommandBuilder()
         .setName('loggingsystem')
         .setDescription('Audit logging system.')
@@ -16,13 +16,13 @@ module.exports = {
             .setName('remove')
             .setDescription('Removes the audit logging system.')
         )
-        //.toJSON()
+        .toJSON()
     ,
     userPermissions: [PermissionFlagsBits.ViewAuditLog],
     botPermissions: [PermissionFlagsBits.ViewAuditLog],
 
-    async execute(client, interaction) {
-        const { options, guildID, channel, guild } = interaction;
+    run: async (client, interaction) => {
+        const { options, guildId, channel, guild } = interaction;
         const subcmd = options.getSubcommand();
         if (!["configure", "remove"].includes(subcmd)) return;
 
@@ -33,7 +33,7 @@ module.exports = {
 
         switch (subcmd) {
             case "configure":
-                let dataGD = await loggingSystem.findOne({ GuildID: guildId });
+                let dataGD = await loggingSchema.findOne({ GuildID: guildId });
                 let response;
 
                 if (!dataGD) {
@@ -47,7 +47,7 @@ module.exports = {
                     });
 
                     dataGD = new loggingSchema({
-                        GuildID: guildID,
+                        GuildID: guildId,
                         Webhooks: [],
                         ChannelLogs: [],
                         GuildLogs: [],
@@ -92,7 +92,7 @@ module.exports = {
                 rEmbed
                     .setColor(mConfig.embedColorWarning)
                     .setTitle("Channels & messages (1/5")
-                    .setDescription(`What audit types related to \`Channels & messages\` should be logged and in which channel should every audit log action be sent to? \n\n`` You can change this anytime using the \`/loggingsystem configure\` command.`)
+                    .setDescription(`What audit types related to \`Channels & messages\` should be logged and in which channel should every audit log action be sent to? \n\n You can change this anytime using the \`/loggingsystem configure\` command.`)
                     .setFields({
                         name: "Logging channel",
                         value: `<#${channel.id}> \`(this channel)\``,
@@ -114,7 +114,7 @@ module.exports = {
                             rEmbed.data.fields[1].value = `\`${i.values.sort().join("\` \`")}\``;
 
                             let enabledAuditTypes = [];
-                            i.components.options.forEach((o) => {
+                            i.component.options.forEach((o) => {
                                 if (i.values.includes(o.value)) {
                                     o = new StringSelectMenuOptionBuilder({
                                         label: o.label,
@@ -276,7 +276,7 @@ module.exports = {
                                 rEmbed
                                     .setTitle(`${auditCategory} (${buttonClicks + 1}/5)`)
                                     .setColor(mConfig.embedColorWarning)
-                                    .setDescription(`What audit types related to \`${auditCategory}\` should be logged and in which channel should every audit log action be sent to? \n\n`` You can change this anytime using the \`/loggingsystem configure\` command.`)
+                                    .setDescription(`What audit types related to \`${auditCategory}\` should be logged and in which channel should every audit log action be sent to? \n\n You can change this anytime using the \`/loggingsystem configure\` command.`)
                                     .setFields({
                                         name: "Logging channel",
                                         value: `-`,

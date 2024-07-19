@@ -1,10 +1,8 @@
-const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder, PermissionFlagsBits } = require('discord.js');
 
 
 
 module.exports = {
-	cooldown: 0,
-	category: 'mod',
 	data: new SlashCommandBuilder()
 		.setName('poll')
 		.setDescription('Creates a new poll.')
@@ -15,9 +13,12 @@ module.exports = {
 		.addStringOption(option =>
 			option.setName('body')
 				.setDescription('Description for the poll')
-				.setRequired(true)),
+				.setRequired(true)).toJSON(),
 
-	async execute(interaction) {
+	userPermissions: [PermissionFlagsBits.ManageMessages],
+	botPermissions: [PermissionFlagsBits.ManageMessages],
+			
+	run: async (client, interaction) => {
 
 		if (!interaction.member.roles.cache.some(role => role.name === 'Admins')) {
 			return interaction.reply({ content: 'You do not have permission to use this command.', ephemeral: true})

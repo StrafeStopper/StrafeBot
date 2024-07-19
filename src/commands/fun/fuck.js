@@ -1,8 +1,6 @@
-const { SlashCommandBuilder } = require('discord.js');
+const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
 
 module.exports = {
-	cooldown: 10,
-	category: 'misc',
 	data: new SlashCommandBuilder()
 		.setName('fuck')
 		.setDescription('Fucks someone for you')
@@ -10,9 +8,12 @@ module.exports = {
 		.addStringOption( option => 
 			option.setName('text')
 			.setDescription('Add additional text to the message.')
-			.setRequired(false)),
+			.setRequired(true)).toJSON(),
+	
+	userPermissions: [PermissionFlagsBits.SendMessages],
+    botPermissions: [PermissionFlagsBits.SendMessages],
 
-	async execute(interaction) {
+	run: async (client, interaction) => {
 		
 		const text = interaction.options.getString('text');
 		if (interaction.options.getMember('user') == 551870229483880471)
