@@ -1,2 +1,2 @@
-@echo "Running bot startup screipt..."
+@echo "Running bot startup script..."
 nodemon
