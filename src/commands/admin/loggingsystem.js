@@ -91,7 +91,7 @@ module.exports = {
 
                 rEmbed
                     .setColor(mConfig.embedColorWarning)
-                    .setTitle("Channels & messages (1/5")
+                    .setTitle("Channels & messages (1/5)")
                     .setDescription(`What audit types related to \`Channels & messages\` should be logged and in which channel should every audit log action be sent to? \n\n You can change this anytime using the \`/loggingsystem configure\` command.`)
                     .setFields({
                         name: "Logging channel",
