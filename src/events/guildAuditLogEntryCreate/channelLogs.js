@@ -1,7 +1,7 @@
-const { EmbedBuilder } = require('discord.js');
-const loggingSchema = require('../../schemas/auditLogging');
-const mConfig = require('../../messageConfig.json');
-const aConfig = require('../../auditConfig.json');
+const { EmbedBuilder } = require("discord.js");
+const loggingSchema = require("../../schemas/auditLogging");
+const mConfig = require("../../messageConfig.json");
+const aConfig = require("../../auditConfig.json");
 
 module.exports = async (client, auditLogEntry, guild) => {
     let dataGD = await loggingSchema.findOne({ GuildID: guild.id });
