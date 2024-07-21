@@ -1,10 +1,18 @@
-const { EmbedBuilder } = require("discord.js");
+const { EmbedBuilder, Guild } = require("discord.js");
 const loggingSchema = require("../../schemas/auditLogging");
 const mConfig = require("../../messageConfig.json");
 const aConfig = require("../../auditConfig.json");
 
 module.exports = async (client, auditLogEntry, guild) => {
-  let dataGD = await loggingSchema.findOne({ GuildID: guildId });
+  console.log("Audit Log Event Triggered");
+  console.log("Guild Object:", guild);
+  console.log("Guild ID:", guild?.id);
+
+  if (!guild || !guild.id) {
+    console.error("Guild or Guild ID is undefined");
+    return;
+  }
+  let dataGD = await loggingSchema.findOne({ GuildID: guild.id });
   if (!dataGD) return;
   const auditActionValue = auditLogEntry.action;
 

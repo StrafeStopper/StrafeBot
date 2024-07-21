@@ -13,10 +13,13 @@ module.exports = (client, guildId) => {
     eventName === "validations" ? (eventName = "interactionCreate") : eventName;
 
     client.on(eventName, async (arg) => {
+      console.log("Event Triggered:", eventName);
+      console.log("Guild ID:", guildId);
       const guild = client.guilds.cache.get(guildId);
+      console.log("Retrieved Guild:", guild);
       for (const eventFile of eventFiles) {
         const eventFunction = require(eventFile);
-        await eventFunction(client, arg);
+        await eventFunction(client, arg, guild);
       }
     });
   }
