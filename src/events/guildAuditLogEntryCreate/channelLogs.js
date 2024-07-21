@@ -2,6 +2,7 @@ const { EmbedBuilder, Guild } = require("discord.js");
 const loggingSchema = require("../../schemas/auditLogging");
 const mConfig = require("../../messageConfig.json");
 const aConfig = require("../../auditConfig.json");
+const packageJson = require("../../../package.json");
 
 module.exports = async (client, auditLogEntry, guild) => {
   console.log("Audit Log Event Triggered");
