@@ -17,7 +17,7 @@ const client = new Client({
     GatewayIntentBits.GuildPresences,
   ],
 });
-const guild = client.guilds.cache.get(guildId);
-eventHandler(client, guild);
+
+eventHandler(client);
 
 client.login(process.env.TOKEN);
