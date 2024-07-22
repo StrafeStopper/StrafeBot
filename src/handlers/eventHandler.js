@@ -9,13 +9,13 @@ module.exports = (client) => {
     let eventName;
     eventName = eventFolder.replace(/\\/g, "/").split("/").pop();
 
-    eventName === "validations" ? eventName = "interactionCreate" : eventName;
+    eventName === "validations" ? (eventName = "interactionCreate") : eventName;
 
     client.on(eventName, async (...args) => {
       for (const eventFile of eventFiles) {
         const eventFunction = require(eventFile);
         await eventFunction(client, ...args);
-      };
+      }
     });
-  };
+  }
 };
