@@ -10,5 +10,12 @@
     "commandPremiumOnly": "This command can only be executed by premium users.",
   
     "userNoPermissions": "You do not have enough permissions to execute this command.",
-    "botNoPermissions": "I do not have enough permissions to execute this command."
+    "botNoPermissions": "I do not have enough permissions to execute this command.",
+
+    "hasHigherRolePostion": "This person has a higher role than you have or has the same role as you.",
+    "unableToInteractWithYourself": "You cannot do that to yourself",
+
+    "cannotUseButton": "You cannot use this button",
+
+    "footerText": "Example text"
   }
