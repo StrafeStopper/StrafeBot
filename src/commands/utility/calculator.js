@@ -10,7 +10,7 @@ const {
   module.exports = {
     data: new SlashCommandBuilder()
       .setName("calculator")
-      .setDescription("Need help with some math ?")
+      .setDescription("An embeded calculator command.")
       .toJSON(),
     deleted: false,
   

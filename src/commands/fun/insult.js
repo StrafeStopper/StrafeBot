@@ -3,7 +3,7 @@ const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('insult')
-		.setDescription('Insults the user')
+		.setDescription('Insults the user.')
         .addUserOption((option) => option.setName('user').setDescription('The user to insult').setRequired(true)).toJSON(),
 
 	

@@ -3,7 +3,7 @@ const { SlashCommandBuilder, Client, Events, GatewayIntentBits, PermissionFlagsB
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('ping')
-		.setDescription('Replies with Pong!').toJSON(),
+		.setDescription('Replies with Pong. (test command').toJSON(),
 
 	userPermissions: [PermissionFlagsBits.SendMessages],
     botPermissions: [PermissionFlagsBits.SendMessages],

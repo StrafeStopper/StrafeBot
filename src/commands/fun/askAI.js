@@ -5,7 +5,7 @@ require("dotenv/config");
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("ask")
-    .setDescription("Ask ai")
+    .setDescription("Ask the Google Gemini AI a question.")
     .addStringOption((o) =>
       o
         .setName("prompt")

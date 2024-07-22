@@ -5,9 +5,6 @@ const aConfig = require("../../auditConfig.json");
 const packageJson = require("../../../package.json");
 
 module.exports = async (client, auditLogEntry, guild) => {
-  console.log("Audit Log Event Triggered");
-  console.log("Guild Object:", guild);
-  console.log("Guild ID:", guild?.id);
 
   if (!guild || !guild.id) {
     console.error("Guild or Guild ID is undefined");

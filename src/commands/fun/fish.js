@@ -3,7 +3,7 @@ const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('fish')
-		.setDescription('Try to catch a fish!').toJSON(),
+		.setDescription('Try to catch a fish.').toJSON(),
 
 
 	userPermissions: [PermissionFlagsBits.SendMessages],

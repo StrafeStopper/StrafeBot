@@ -3,7 +3,7 @@ const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('fuck')
-		.setDescription('Fucks someone for you')
+		.setDescription('Fucks someone for you.')
         .addUserOption((option) => option.setName('user').setDescription('The user to fuck').setRequired(true))
 		.addStringOption( option => 
 			option.setName('text')

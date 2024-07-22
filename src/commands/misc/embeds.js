@@ -9,7 +9,7 @@ const {
   module.exports = {
     data: new SlashCommandBuilder()
       .setName('embed')
-      .setDescription('Creates an embed message.')
+      .setDescription('Creates an embed message. (test)')
       .setDefaultMemberPermissions(PermissionFlagsBits.Administrator),
     userPermissions: [PermissionFlagsBits.Administrator],
     bot: [],
