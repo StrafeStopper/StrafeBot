@@ -14,7 +14,7 @@ module.exports = async (client, auditLogEntry, guild) => {
   });
 
   let auditEnabled;
-  const logData = dataGD.IntegrationlLogs.find(
+  const logData = dataGD.IntegrationLogs.find(
     (arrayData) => arrayData.name === auditActionName
   );
   if (logData) auditEnabled = logData.enabled;
@@ -343,7 +343,7 @@ module.exports = async (client, auditLogEntry, guild) => {
       }
     }
 
-    if (moreChnages > 0) {
+    if (moreChanges > 0) {
       convertAndAddField(
         "\u200b",
         `*and \`${moreChanges}\` more ${
@@ -354,8 +354,8 @@ module.exports = async (client, auditLogEntry, guild) => {
   }
 
   const channel =
-    guild.channels.cache.get(auditLofEntry.target?.id) ||
-    guild.channels.cache.get(auditLogEnrry.extra?.channel?.id);
+    guild.channels.cache.get(auditLogEntry.target?.id) ||
+    guild.channels.cache.get(auditLogEntry.extra?.channel?.id);
   wEmbed.setTitle(
     `Event: \`${auditActionName}\`${channel ? ` > ${channel}` : ""}`
   );
@@ -421,7 +421,7 @@ module.exports = async (client, auditLogEntry, guild) => {
     WebhookDelete: [["id", "name"]],
   };
 
-  const actionTypes = auditActionsObj[auditActionname];
+  const actionTypes = auditActionsObj[auditActionName];
   if (actionTypes) {
     await getAuditData(...actionTypes);
   }
