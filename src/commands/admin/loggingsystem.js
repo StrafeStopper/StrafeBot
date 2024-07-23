@@ -21,7 +21,7 @@ const aConfig = require("../../auditConfig.json");
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("loggingsystem")
-    .setDescription("Audit logging system.")
+    .setDescription("Audit logging system (server administrator only)")
     .addSubcommand((s) =>
       s
         .setName("configure")

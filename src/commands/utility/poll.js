@@ -5,7 +5,7 @@ const { SlashCommandBuilder, EmbedBuilder, PermissionFlagsBits } = require('disc
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('poll')
-		.setDescription('Creates a new poll.')
+		.setDescription('Creates a new poll (server moderator only)')
 		.addStringOption(option =>
 			option.setName('title')
 				.setDescription('Title for the poll')

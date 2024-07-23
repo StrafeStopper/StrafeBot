@@ -10,7 +10,7 @@ const packageJson = require("../../../package.json");
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("info")
-    .setDescription("Displays information about the bot")
+    .setDescription("Displays information about the server, bot, or user")
     .addSubcommand((s) =>
       s.setName("bot").setDescription("Bot-specific information")
     )
