@@ -4,7 +4,7 @@ const {
     PermissionFlagsBits,
     EmbedBuilder,
   } = require('discord.js');
-  const buttonPagination = require('../../utils/buttonPagination');
+  const buttonPagination = require('../src/utils/buttonPagination');
   
   module.exports = {
     data: new SlashCommandBuilder()
