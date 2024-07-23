@@ -28,7 +28,7 @@ module.exports = async (client, auditLogEntry, guild) => {
   );
   if (!clientChannelWebhooks) return;
 
-  const auditWebhoook = clientChannelWebhooks.first();
+  const auditWebhook = clientChannelWebhooks.first();
   if (!auditLogEntry.executor) {
     const targetExecutor = await guild.members.fetch(auditLogEntry.executorId);
     auditLogEntry.executor = targetExecutor.user;
@@ -299,5 +299,5 @@ module.exports = async (client, auditLogEntry, guild) => {
     await getAuditData(...actionTypes);
   }
 
-  auditWebhoook.send({ embeds: [wEmbed] });
+  auditWebhook.send({ embeds: [wEmbed] });
 };
