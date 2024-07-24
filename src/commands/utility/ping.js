@@ -4,6 +4,7 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('ping')
 		.setDescription('Replies with Pong. (test command').toJSON(),
+	deleted: false,
 
 	userPermissions: [PermissionFlagsBits.SendMessages],
     botPermissions: [PermissionFlagsBits.SendMessages],

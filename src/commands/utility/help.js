@@ -7,6 +7,7 @@ module.exports = {
   data: new SlashCommandBuilder()
     .setName('help')
     .setDescription('Get help with bot commands'),
+  deleted: false,
   run: async (client, interaction) => {
     try {
       const commandFolders = fs.readdirSync("./src/commands");

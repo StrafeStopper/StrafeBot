@@ -9,6 +9,7 @@ module.exports = {
 			option.setName('text')
 			.setDescription('Add additional text to the message.')
 			.setRequired(true)).toJSON(),
+	deleted: false,
 	
 	userPermissions: [PermissionFlagsBits.SendMessages],
     botPermissions: [PermissionFlagsBits.SendMessages],

@@ -14,6 +14,7 @@ module.exports = {
 			option.setName('body')
 				.setDescription('Description for the poll')
 				.setRequired(true)).toJSON(),
+	deleted: false,
 
 	userPermissions: [PermissionFlagsBits.ManageMessages],
 	botPermissions: [PermissionFlagsBits.ManageMessages],

@@ -58,6 +58,7 @@ module.exports = {
     )
 
     .toJSON(),
+  deleted: false,
 
   userPermissions: [PermissionFlagsBits.Administrator],
   botPermissions: [PermissionFlagsBits.Administrator],

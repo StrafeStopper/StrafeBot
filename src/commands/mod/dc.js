@@ -5,6 +5,7 @@ module.exports = {
 		.setName('dc')
 		.setDescription('Disconnects someone from voice chat (server moderator only)')
         .addUserOption(option => option.setName("user").setDescription('The user to dc').setRequired(true)).toJSON(),
+	deleted: false,
 
 	userPermissions:[PermissionFlagsBits.MoveMembers],
 	botPermissions: [PermissionFlagsBits.MoveMembers],

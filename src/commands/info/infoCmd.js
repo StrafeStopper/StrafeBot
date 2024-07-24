@@ -28,6 +28,7 @@ module.exports = {
         )
     )
     .toJSON(),
+  deleted: false,
 
   userPermissions: [PermissionFlagsBits.SendMessages],
   botPermissions: [PermissionFlagsBits.SendMessages],

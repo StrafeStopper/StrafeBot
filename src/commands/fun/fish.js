@@ -4,6 +4,7 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('fish')
 		.setDescription('Try to catch a fish.').toJSON(),
+	deleted: false,
 
 
 	userPermissions: [PermissionFlagsBits.SendMessages],

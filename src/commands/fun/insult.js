@@ -5,6 +5,7 @@ module.exports = {
 		.setName('insult')
 		.setDescription('Insults the user.')
         .addUserOption((option) => option.setName('user').setDescription('The user to insult').setRequired(true)).toJSON(),
+	deleted: false,
 
 	
 	userPermissions: [PermissionFlagsBits.SendMessages],
