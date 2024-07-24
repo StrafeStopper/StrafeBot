@@ -13,6 +13,7 @@ const {
       .setDefaultMemberPermissions(PermissionFlagsBits.Administrator),
     userPermissions: [PermissionFlagsBits.Administrator],
     bot: [],
+    deleted: true,
   
     run: async (client, interaction) => {
       try {

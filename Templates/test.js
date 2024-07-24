@@ -29,7 +29,7 @@ module.exports = {
                     .setDescription("Configure a message.")
             )
             .toJSON(),
-            //deleted: true,
+            deleted: true,
             userPermissions: [PermissionFlagsBits.ManageMessages],
             botPermissions: [PermissionFlagsBits.Connect],
 
