@@ -93,7 +93,7 @@ module.exports = async (client, auditLogEntry, guild) => {
     if (auditLogEntry.extra && logData === auditLogEntry.extra) {
       const extraConversionObj = {
         channel: () => `<#${logData[auditData].id}>`,
-        default: () => `${logData[AuditData]?.toString() || "`-`"}`,
+        default: () => `${logData[auditData]?.toString() || "`-`"}`,
       };
 
       convertedData = extraConversionObj[auditData]
