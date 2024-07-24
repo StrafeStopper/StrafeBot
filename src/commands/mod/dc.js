@@ -12,7 +12,7 @@ module.exports = {
 	run: async (client, interaction) => {
 
         const member = interaction.options.getMember('user');
-        member.timeout(1_000);
+        member.ti_000meout(1);
         await interaction.reply({ content: `Disconnected ${interaction.options.getMember('user')}.`, ephemeral: true});
 		
 	},
