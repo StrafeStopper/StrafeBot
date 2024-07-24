@@ -16,8 +16,8 @@ module.exports =
           {
             Activity: [
               {
-                Name: `in ${client.guilds.cache.size} servers!`,
-                Type: ActivityType.Playing,
+                Name: `Testing in ${client.guilds.cache.size} servers!`,
+                Type: ActivityType.Custom,
               },
             ],
             Status: "online",
