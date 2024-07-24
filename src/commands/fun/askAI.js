@@ -15,9 +15,6 @@ module.exports = {
     .toJSON(),
   deleted: false,
 
-  userPermissions: [PermissionFlagsBits.SendMessages],
-  botPermissions: [PermissionFlagsBits.SendMessages],
-
   run: async (client, interaction) => {
     await interaction.deferReply();
     const genAI = new GoogleGenerativeAI(process.env.API_KEY);
