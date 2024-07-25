@@ -12,6 +12,7 @@ module.exports = (client) => {
     eventName === "validations" ? (eventName = "interactionCreate") : eventName;
 
     client.on(eventName, async (...args) => {
+      process.setMaxListeners(0);
       for (const eventFile of eventFiles) {
         const eventFunction = require(eventFile);
         await eventFunction(client, ...args);

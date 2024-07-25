@@ -21,9 +21,6 @@ module.exports = {
 			
 	run: async (client, interaction) => {
 
-		if (!interaction.member.roles.cache.some(role => role.name === 'Admins')) {
-			return interaction.reply({ content: 'You do not have permission to use this command.', ephemeral: true})
-		}
 
         await interaction.reply({ content: `Poll created below.`, ephemeral: true});
 		const title = await interaction.options.getString('title');
