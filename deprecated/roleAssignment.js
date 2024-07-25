@@ -14,8 +14,8 @@ const {
   Component,
   Guild,
 } = require("discord.js");
-const roleSchema = require("../../schemas/roles");
-const mConfig = require("../../messageConfig.json");
+const roleSchema = require("./roles");
+const mConfig = require("../src/messageConfig.json");
 
 module.exports = {
   data: new SlashCommandBuilder()
