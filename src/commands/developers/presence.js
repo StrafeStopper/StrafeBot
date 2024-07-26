@@ -1,3 +1,4 @@
+
 const {
   SlashCommandBuilder,
   PermissionFlagsBits,
@@ -27,7 +28,7 @@ module.exports = {
             .setName("type")
             .setDescription("The type of the presence")
             .setChoices(
-              { name: "Competing", value: `${ActivityType.Competing}}` },
+              { name: "Competing", value: `${ActivityType.Competing}` },
               { name: "Streaming", value: `${ActivityType.Streaming}` },
               { name: "Listening", value: `${ActivityType.Listening}` },
               { name: "Watching", value: `${ActivityType.Watching}` },
