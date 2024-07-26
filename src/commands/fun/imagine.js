@@ -32,7 +32,7 @@ module.exports = {
   userPermissions: [PermissionFlagsBits.SendMessages],
   botPermissions: [PermissionFlagsBits.SendMessages],
 
-  run: async ( client, interaction ) => {
+  run: async (client, interaction) => {
     await interaction.deferReply();
     try {
       const { default: Replicate } = await import("replicate");
