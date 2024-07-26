@@ -25,7 +25,6 @@ module.exports = {
         .setName("model")
         .setDescription("The image model to use")
         .setChoices(models)
-        .setRequired(true)
     )
     .toJSON(),
   deleted: false,
