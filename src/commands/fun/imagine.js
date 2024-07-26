@@ -70,6 +70,7 @@ module.exports = {
       });
     } catch (error) {
       console.log(`An error occured:\n\n ${error}`);
+      await interaction.reply(`An error occured:\n\n ${error}`)
       /*const errEmbed = new EmbedBuilder()
         .setTitle("An error occurred")
         .setDescription("```" + error + "```")
