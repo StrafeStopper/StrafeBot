@@ -7,8 +7,8 @@ const {
   PermissionFlagsBits,
   EmbedBuilder,
 } = require("discord.js");
-const { REPLICATE_API_KEY } = require("../../config.json");
 const models = require("../../models");
+require("dotenv/config");
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -39,7 +39,7 @@ module.exports = {
       const { default: Replicate } = await import("replicate");
 
       const replicate = new Replicate({
-        auth: REPLICATE_API_KEY,
+        auth: process.env.REPLICATE_API_KEY,
       });
 
       const prompt = interaction.options.getString("prompt");
