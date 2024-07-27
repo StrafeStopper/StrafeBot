@@ -13,7 +13,7 @@ require("dotenv/config");
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("image-ai")
-    .setDescription("Generate an AI image using a prompt.")
+    .setDescription("Generate an AI image using a prompt. (Rate limited for now)")
     .addStringOption((opt) =>
       opt
         .setName("prompt")
