@@ -167,7 +167,7 @@ module.exports = async (client, auditLogEntry, guild) => {
         if (auditDataType.includes("*")) {
           const key = auditDataType.slice(0, -1);
           const fieldValue = await convertAuditData(key, auditLogEntry.extra);
-          if (!fieldData) continue;
+          if (!fieldValue) continue;
 
           convertAndAddField(
             `${
