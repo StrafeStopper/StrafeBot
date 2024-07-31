@@ -167,7 +167,7 @@ module.exports = async (client, auditLogEntry, guild) => {
         : extraConversionObj.default();
       return convertedData;
     } else {
-      if (!isNan(auditData)) {
+      if (!isNaN(auditData)) {
         convertedData = logData?.permission
           ? "`✅ Allowed`"
           : "`❌ Disallowed`";
