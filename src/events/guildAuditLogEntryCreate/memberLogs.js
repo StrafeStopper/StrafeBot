@@ -180,7 +180,7 @@ module.exports = async (client, auditLogEntry, guild) => {
         } else if (auditDataType.includes("+")) {
           const key = auditDataType.slice(0, -1);
           const fieldValue = await convertAuditData(key, auditLogEntry[key]);
-          if (!fieldData) continue;
+          if (!fieldValue) continue;
 
           convertAndAddField(
             `${
