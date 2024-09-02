@@ -16,7 +16,7 @@ In the root of the directory, create a file called `.env`
 
 In this file you need to add two API keys: <br />
 `TOKEN=(discord bot app token)` <br />
-`MONGO_URL=(url for your mongodb database`
+`MONGO_URL=(url for your mongodb database)`
 
 ### Running the bot
 
