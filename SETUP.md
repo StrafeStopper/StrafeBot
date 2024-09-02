@@ -21,4 +21,4 @@ In this file you need to add two API keys: <br />
 ### Running the bot
 
 In linux, the bot should run with: `./start.sh` <br />
-If the script doesnt run use `chmod +x start.sh` then try running the script again
+If the script doesnt run use `chmod 777 start.sh` then try running the script again
