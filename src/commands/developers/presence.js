@@ -12,7 +12,7 @@ const botSchema = require("../../schemas/botPresence");
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("presence")
-    .setDescription("Mamage bot activity and status (bot developer only)")
+    .setDescription("Manage bot activity and status (bot developer only)")
     .addSubcommand((sub) =>
       sub
         .setName("add")
