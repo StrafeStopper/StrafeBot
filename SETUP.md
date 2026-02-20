@@ -26,4 +26,5 @@ In this file you need to add two API keys: <br />
 
 In linux, the bot should run with: `./start.sh` <br />
 If the script doesnt run use `chmod 777 start.sh` then try running the script again <br />
-In Windows, run `start.bat` or `nodemon`
+In Windows, run `start.bat` or `nodemon` <br />
+If neither works, use `npm run start`, but scripts are better for handling crashes since the terminal will stay open. 
