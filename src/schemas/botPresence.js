@@ -6,7 +6,7 @@ const botPresenceSchema = new Schema(
     Presences: Array,
   },
   {
-    strict: true,
+    strict: false,
   }
 );
 
