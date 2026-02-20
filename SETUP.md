@@ -4,6 +4,10 @@
 Install node.js and npm <br />
 `sudo apt install node.js npm`
 
+### Windows setup
+
+Install node.js from their website with the `.msi` installer <br />
+
 Clone this repository and open your terminal in the root of the directory.
 
 Install the required dependancies: <br />
