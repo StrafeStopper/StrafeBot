@@ -8,6 +8,8 @@ module.exports =
    */
   async (client) => {
     const botSchemaData = await botSchema.findOne({ ClientID: client.user.id });
+    //await client.guilds.cache.fetch();
+    
 
     if (!botSchemaData) {
       await botSchema.create({
@@ -16,7 +18,7 @@ module.exports =
           {
             Activity: [
               {
-                Name: `Testing in ${client.guilds.cache.size} servers!`,
+                Name: `Testing some new features!`,
                 Type: ActivityType.Custom,
               },
             ],
@@ -30,8 +32,13 @@ module.exports =
       const botSchemaData = await botSchema.findOne({
         ClientID: client.user.id,
       });
+      //await presence.Activity[0].Name = client.guilds.cache.size;
       const presences = botSchemaData.Presences;
-      const presence = presences[Math.floor(Math.random() * presences.length)];
+      const i = Math.floor(Math.random() * presences.length);
+      const presence = presences[i];
+      if (i == 0) {
+        presence.Activity[0].Name = `Testing in ${client.guilds.cache.size} servers!`;
+      }
 
       client.user.setPresence({
         activities: [

@@ -1,6 +1,6 @@
 require("dotenv/config");
 
-const { Client, GatewayIntentBits, guildId, EmbedBuilder, IntentsBitField } = require("discord.js");
+const { Client, Guild, GatewayIntentBits, guildId, EmbedBuilder, IntentsBitField } = require("discord.js");
 const eventHandler = require("./handlers/eventHandler");
 
 /*const myIntents = new IntentsBitField();
